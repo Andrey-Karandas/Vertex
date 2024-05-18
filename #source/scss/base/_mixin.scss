@@ -1,0 +1,30 @@
+@mixin icon {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+}
+
+@mixin telAndMap {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 20px;
+  height: 20px;
+}
+
+@mixin bg {
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: $secondary-bg;
+    opacity: 0.8;
+  }
+}

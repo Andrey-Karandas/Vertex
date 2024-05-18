@@ -1,0 +1,202 @@
+.header {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  z-index: 50;
+
+  &__burger {
+    span {
+      transition: all 0.3s linear;
+    }
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    padding: 15px 0px;
+  }
+
+  &__menu {
+    flex: 1 1 auto;
+  }
+}
+
+// Media=======================================================================
+@media (min-width: 768px) {
+  .header {
+    &__body {
+      border-bottom: 0.5px solid $basic-gray;
+    }
+
+    &__menu {
+      padding: 0px 0px 0px 50px;
+    }
+  }
+
+  .menu {
+    display: flex;
+    align-items: center;
+
+    &__list {
+      flex: 0 0 63%;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        margin: 0px 35px 0px 0px;
+        &:last-child {
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+
+    &__link {
+      cursor: pointer;
+    }
+
+    &__contacts {
+      flex: 0 0 37%;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+        position: relative;
+        min-width: 160px;
+        flex: 1 1 50%;
+        padding: 0px 0px 0px 17px;
+        &:first-child {
+          &::before {
+            @include icon;
+            background: $telephone;
+          }
+        }
+        &:nth-child(2) {
+          text-align: center;
+        }
+        &:last-child {
+          &::before {
+            @include icon;
+            background: $map;
+          }
+        }
+      }
+    }
+  }
+}
+
+// Media=======================================================================
+@media (max-width: 767px) {
+  .header__menu.active {
+    display: block;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $basic-white;
+    padding: 96px 0px 0px 0px;
+    .menu__list {
+      border-top: 1px solid $secondary-dark;
+      border-bottom: 1px solid $secondary-dark;
+      padding: 35px 0px;
+      li {
+        text-align: center;
+        margin: 0px 0px 40px 0px;
+        &:last-child {
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+    .menu__link {
+      font-size: 22px;
+      line-height: 26px;
+      font-weight: 500;
+    }
+
+    .menu__contacts {
+      display: block;
+      max-width: 250px;
+      margin: 0px auto;
+      padding: 30px 0px;
+      li {
+        position: relative;
+        padding: 0px 0px 0px 31px;
+        margin: 0px 0px 25px 0px;
+        &:first-child {
+          &::before {
+            @include telAndMap;
+            background: $bigTelephone;
+          }
+        }
+        &:nth-child(2) {
+          &::before {
+            @include telAndMap;
+            background: $bigTelephone;
+          }
+        }
+        &:last-child {
+          margin: 0px 0px 0px 0px;
+          &::before {
+            @include telAndMap;
+            background: $bigMap;
+          }
+        }
+      }
+    }
+  }
+
+  .header__burger.active {
+    span {
+      &:first-child {
+        transform: translate(0px, 10px) rotateZ(40deg);
+      }
+      &:nth-child(2) {
+        transform: rotateZ(-40deg);
+      }
+      &:last-child {
+        opacity: 0;
+      }
+    }
+  }
+
+  .header {
+    &__body {
+      justify-content: space-between;
+    }
+
+    &__burger {
+      position: relative;
+      z-index: 100;
+      width: 28px;
+      height: 21px;
+      span {
+        display: block;
+        width: 100%;
+        height: 3px;
+        background: $primary;
+        border-radius: 5px;
+        margin: 0px 0px 6px 0px;
+        &:last-child {
+          position: absolute;
+          width: 18px;
+          bottom: 0px;
+          right: 0px;
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+
+    &__logo {
+      position: relative;
+      z-index: 10;
+    }
+  }
+
+  .menu {
+    display: none;
+
+    &__contacts {
+      display: none;
+    }
+  }
+}

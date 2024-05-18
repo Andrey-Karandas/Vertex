@@ -1,0 +1,113 @@
+.diplomas {
+  padding: 50px 0px;
+  background: url('../../img/diplom/bg.png') 0 0 / cover no-repeat;
+  position: relative;
+  @include bg;
+
+  &__title {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: $basic-white;
+    margin: 0px 0px 30px 0px;
+  }
+
+  &__wrapper {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__column {
+    text-align: center;
+    flex-shrink: 0;
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    top: 50%;
+    transition: background 0.3s linear;
+    transform: translate(0%, -50%);
+    &_prev {
+      &:hover {
+        border: 1px solid $basic-white;
+        opacity: 0.8;
+      }
+    }
+    &_next {
+      &:hover {
+        border: 1px solid $basic-white;
+        opacity: 0.8;
+      }
+    }
+  }
+}
+
+// media =================================================================
+@media (min-width: 1080px) {
+  .diplomas {
+    &__button {
+      width: 44px;
+      height: 44px;
+    }
+  }
+}
+
+// media ================================================================
+
+@media (min-width: 768px) {
+  .diplomas {
+    &__wrapper {
+      max-width: 1128px;
+      margin: 0px auto;
+    }
+
+    &__column {
+      &_prev,
+      &_next {
+        transform: scale(0.724, 0.724);
+      }
+    }
+  }
+}
+
+// media ================================================================
+
+@media (max-width: 768px) {
+  .diplomas {
+    padding: 40px 0px;
+
+    &__wrapper {
+      margin: 0px -174px;
+    }
+
+    &__title {
+      font-size: 22px;
+      margin: 0px 0px 40px 0px;
+    }
+
+    &__column {
+      &_prev,
+      &_next {
+        transform: scale(0.67, 0.674);
+      }
+    }
+
+    &__button {
+      width: 30px;
+      height: 30px;
+      &_prev {
+        left: 28.5%;
+      }
+      &_next {
+        right: 28.5%;
+      }
+    }
+  }
+}

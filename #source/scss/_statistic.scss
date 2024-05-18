@@ -1,0 +1,74 @@
+.statistics {
+  background: url('../img/statistic/1.png') 0 0 / cover no-repeat;
+  color: $basic-white;
+  text-align: center;
+  position: relative;
+  @include bg;
+
+  &__body {
+    position: relative;
+    z-index: 5;
+  }
+
+  &__number {
+    font-weight: 700;
+    color: $primary;
+    margin: 0px 0px 15px 0px;
+  }
+
+  &__text {
+    font-family: $medium;
+    font-weight: 500;
+  }
+}
+// media================================================
+@media (min-width: 768px) {
+  .statistics {
+    padding: 50px 0px;
+    margin: 0px 0px 80px 0px;
+
+    &__title {
+      margin: 0px 0px 50px 0px;
+    }
+
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0px -77.5px;
+    }
+
+    &__column {
+      flex: 1 1 25%;
+      min-width: 265px;
+      padding: 0px 77.5px;
+    }
+  }
+}
+// media================================================
+
+@media (max-width: 767px) {
+  .statistics {
+    padding: 40px 0px;
+    margin: 0px 0px 40px 0px;
+
+    &__title {
+      font-size: 22px;
+      margin: 0px 0px 20px 0px;
+    }
+
+    &__text {
+      font-size: 18px;
+    }
+
+    &__number {
+      margin: 0px 0px 10px 0px;
+    }
+
+    &__column {
+      margin: 0px 0px 20px 0px;
+      &:last-child {
+        margin: 0px 0px 0px 0px;
+      }
+    }
+  }
+}

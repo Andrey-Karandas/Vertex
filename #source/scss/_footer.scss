@@ -1,0 +1,271 @@
+.footer {
+  border-top: 1px solid $secondary-dark;
+}
+
+.logo {
+  &__image {
+    margin: 0px 0px 23px 0px;
+  }
+
+  &__list {
+    display: flex;
+    margin: 0px -10px;
+    li {
+      flex: 1 1 33.333%;
+      padding: 0px 10px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: $secondary-icon;
+    border-radius: 50%;
+  }
+}
+
+.top {
+  &__link {
+    margin: 0px 0px 10px 0px;
+    &:last-child {
+      margin: 0px 0px 0px 0px;
+      color: $primary;
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 700;
+    width: 245px;
+    height: 60px;
+    border-radius: 4px;
+    padding: 0px 15px;
+    transition: background-color 0.3s linear;
+    background-color: $primary;
+    opacity: 0.8;
+    color: $basic-white;
+    &:hover {
+      border: 3px solid $primary;
+      color: $primary;
+      background: url('../img/icons/tel.svg') 27px 20px no-repeat, $basic-white;
+    }
+    &:active {
+      background-color: $primary;
+      color: $basic-white;
+    }
+  }
+}
+.bottom {
+  &__title {
+    color: $basic-gray;
+    margin: 0px 0px 10px 0px;
+  }
+}
+
+// =========================media=========================
+@media (min-width: 768px) {
+  .footer {
+    &__row {
+      display: flex;
+    }
+
+    &__column {
+      &_1 {
+        flex: 0 1 50%;
+        border-right: 1px solid $secondary-dark;
+        padding: 34px 0px 45px 15px;
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &_2 {
+        flex: 0 1 50%;
+        padding: 34px 0px 45px 0px;
+      }
+    }
+
+    &__top {
+      border-bottom: 1px solid $secondary-dark;
+      padding: 0px 15px 20px 40px;
+    }
+
+    &__bottom {
+      padding: 32px 15px 0px 40px;
+    }
+
+    &__info {
+      display: none;
+    }
+  }
+
+  .logo {
+    &__list {
+      &_2 {
+        display: none;
+      }
+    }
+  }
+
+  .column {
+    &__body {
+      display: flex;
+      flex: 0 1 560px;
+    }
+
+    &__logo {
+      padding: 0px 64px 0px 0px;
+    }
+
+    &__info {
+      padding: 0px 80px 0px 0px;
+      flex: 1 1 auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+
+  .info {
+    &__list {
+      &:first-child {
+        padding: 0px 15px 0px 0px;
+      }
+      li {
+        transition: all 0.3s linear;
+        margin: 0px 0px 20px 0px;
+        &:last-child {
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+    &__link {
+      cursor: pointer;
+    }
+  }
+
+  .top {
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 600px;
+    }
+
+    &__column {
+      &_1 {
+        flex: 1 1 auto;
+        padding: 0px 30px 15px 0px;
+      }
+      &_2 {
+        flex: 0 0 245px;
+      }
+    }
+  }
+
+  .bottom {
+    &__row {
+      display: flex;
+      flex-wrap: wrap;
+      max-width: 600px;
+    }
+
+    &__column {
+      &_1 {
+        flex: 1 1 auto;
+        padding: 0px 30px 15px 0px;
+      }
+      &_2 {
+        flex: 0 0 245px;
+      }
+    }
+  }
+}
+// =========================media=========================
+@media (max-width: 767px) {
+  .footer {
+    padding: 20px 0px 30px 0px;
+
+    &__column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0px 15px;
+      &_3 {
+        border-top: 1px solid $secondary-dark;
+      }
+    }
+    &__info {
+      padding: 20px 0px;
+    }
+  }
+
+  .info {
+    &__list {
+      margin: 0px 0px 20px 0px;
+      &:last-child {
+        margin: 0px 0px 0px 0px;
+      }
+      li {
+        margin: 0px 0px 20px 0px;
+        &:last-child {
+          margin: 0px 0px 0px 0px;
+        }
+      }
+    }
+  }
+
+  .logo {
+    &__image {
+      margin: 0px 0px 18px 0px;
+    }
+
+    &__list {
+      &_1 {
+        display: none;
+      }
+    }
+  }
+
+  .column {
+    &__info {
+      display: none;
+    }
+  }
+
+  .top {
+    &__row {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__column {
+      margin: 0px 0px 20px 0px;
+
+      &_1 {
+        order: 2;
+      }
+      &_2 {
+        order: 1;
+      }
+    }
+
+    &__link {
+      &:first-child {
+        font-size: 22px;
+      }
+    }
+  }
+
+  .bottom {
+    &__column {
+      margin: 0px 0px 20px 0px;
+    }
+  }
+}

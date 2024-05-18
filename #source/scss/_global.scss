@@ -1,0 +1,51 @@
+body {
+  font-family: $regular;
+  color: $basic-black;
+}
+
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1190px;
+  padding: 0px 15px;
+}
+
+.main {
+  flex: 1 1 auto;
+}
+
+.lock {
+  overflow: hidden;
+}
+
+.prev {
+  left: 0;
+  background: url('../img/icons/arr-l-w.svg') center / 70% auto no-repeat,
+    $primary;
+  opacity: 0.9;
+  &:hover {
+    background: url('../img/icons/arr-l.svg') center / 70% no-repeat;
+  }
+  &:active {
+    background: url('../img/icons/arr-l-w.svg') center / 70% no-repeat, $primary;
+  }
+}
+
+.next {
+  right: 0;
+  background: url('../img/icons/arr-r-w.svg') center / 70% auto no-repeat,
+    $primary;
+  opacity: 0.9;
+  &:hover {
+    background: url('../img/icons/arr-r.svg') center / 70% auto no-repeat;
+  }
+  &:active {
+    background: url('../img/icons/arr-r-w.svg') center / 70% no-repeat, $primary;
+  }
+}

@@ -1,0 +1,154 @@
+.reviews {
+  &__wrapper {
+    overflow: hidden;
+  }
+
+  &__row {
+    display: flex;
+  }
+
+  &__column {
+    flex-shrink: 0;
+  }
+}
+
+.column {
+  &__wrapper {
+    border: 1px solid $basic-gray;
+    border-radius: 5px;
+  }
+
+  &__author {
+    display: flex;
+    align-items: center;
+  }
+
+  &__name {
+    font-family: $medium;
+    font-weight: 500;
+  }
+  &__list {
+    display: flex;
+    justify-content: end;
+    li {
+      position: relative;
+      margin: 0px 40px 0px 0px;
+      &:last-child {
+        margin: 0px 0px 0px 0px;
+      }
+    }
+  }
+
+  &__link {
+    font-family: $medium;
+    font-weight: 500;
+    text-decoration: underline;
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 20px;
+    }
+    &_1 {
+      padding: 0px 25px 0px 0px;
+      &::after {
+        width: 20px;
+        background: url('../img/icons/flamp.svg') 0 0 no-repeat;
+      }
+    }
+    &_2 {
+      padding: 0px 55px 0px 0px;
+      &::after {
+        width: 50px;
+        background: url('../img/icons/gis.svg') 0 0 no-repeat;
+      }
+    }
+  }
+}
+
+// media===================================================
+
+@media (min-width: 768px) {
+  .reviews {
+    padding: 80px 0px;
+
+    &__title {
+      margin: 0px 0px 40px 0px;
+    }
+
+    &__row {
+      margin: 0px 0px 17px 0px;
+    }
+
+    &__buttons {
+      display: flex;
+      justify-content: end;
+    }
+
+    &__button {
+      margin: 0px 30px 0px 0px;
+      &:last-child {
+        margin: 0px 14px 0px 0px;
+      }
+    }
+  }
+
+  .column {
+    &__wrapper {
+      padding: 20px 30px;
+    }
+
+    &__author {
+      margin: 0px 0px 15px 0px;
+    }
+
+    &__photo {
+      margin: 0px 20px 0px 0px;
+    }
+
+    &__text {
+      margin: 0px 0px 30px 0px;
+    }
+  }
+}
+
+// media===================================================
+@media (max-width: 768px) {
+  .reviews {
+    padding: 40px 0px;
+
+    &__title {
+      font-size: 22px;
+      margin: 0px 0px 30px 0px;
+      text-align: center;
+    }
+
+    &__buttons {
+      &_disable {
+        display: none;
+      }
+    }
+  }
+
+  .column {
+    &__wrapper {
+      padding: 15px;
+    }
+
+    &__author {
+      margin: 0px 0px 20px 0px;
+    }
+
+    &__photo {
+      margin: 0px 15px 0px 0px;
+    }
+
+    &__text {
+      font-size: 14px;
+      margin: 0px 0px 10px 0px;
+    }
+  }
+}
